@@ -50,6 +50,8 @@ public:
     char splitTer();
     
     void imprimir();
+    
+    bool operator==(const Registro& other) const;
 private:
     Gramatica* grammar;
     unsigned i, j;  //posicion 1 y 2

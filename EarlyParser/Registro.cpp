@@ -50,6 +50,11 @@ char Registro::splitTer() {
     return 'e';
 }
 
+bool Registro::operator==(const Registro& other) const{
+    return A==other.A && i == other.i && j == other.j && alfa == other.alfa && beta==other.beta;
+}
+
+
 void Registro::imprimir() {
     cout << "(" << i << ", " << j << ", " << A << ", " << alfa << ", " << beta << ")" << endl;
 }

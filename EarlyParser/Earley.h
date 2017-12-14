@@ -34,7 +34,6 @@ private:
     map<char,bool> check_var;
     
     unsigned j=0;
-    unsigned i=0;
     
     void initialization();
     void clausure();
