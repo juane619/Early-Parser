@@ -30,18 +30,17 @@ Registro::Registro(unsigned i_p, unsigned j_p, const string& A_p, const string& 
 
 char Registro::splitVar() {
     char car;
-    if (beta.size() > 1) {
-        string aux(beta.substr(beta.size() - 2));
-        if (grammar->isVar(car = *(aux.end() - 1)))
-            return car;
-        else
-            return *(aux.end() - 2);
+    unsigned pos;
+    for (auto it = grammar->getVariables()->begin(); it != grammar->getVariables()->end(); ++it) {
+        if (beta[0] == *it)
+            return *it;
     }
-    return beta[0];
+    
+    return 'e';
 }
 
 void Registro::imprimir() {
-    cout << "(" << i << ", " << j << ", " << A << ", " << alfa << ", " << beta << ")" << endl;  
+    cout << "(" << i << ", " << j << ", " << A << ", " << alfa << ", " << beta << ")" << endl;
 }
 
 

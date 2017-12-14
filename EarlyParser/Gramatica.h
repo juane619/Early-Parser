@@ -26,13 +26,12 @@ public:
     
     Gramatica(){}
     
-    
-    set<char> getTerminales() const {
-        return terminales;
+    const set<char>* getTerminales() const {
+        return &terminales;
     }
 
-    set<char> getVariables() const {
-        return variables;
+    const set<char>* getVariables() const {
+        return &variables;
     }
     
     vector<Produccion> getProducciones() const {

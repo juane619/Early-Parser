@@ -41,10 +41,11 @@ int main(int argc, char** argv) {
 
 
     Gramatica gram(prods);
+//
+//    for (unsigned i = 0; i < gram.getProducciones().size(); i++)
+//        gram.getProducciones()[i].imprimir();
 
-    for (unsigned i = 0; i < gram.getProducciones().size(); i++)
-        gram.getProducciones()[i].imprimir();
-
+    
     Earley earley1(gram, "baa");
 
     earley1.parse();

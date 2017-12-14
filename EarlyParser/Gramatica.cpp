@@ -32,9 +32,7 @@ void Gramatica::obtain_ter_var() {
         //parte derecha
         parte = producciones[i].parteDer();
         for (unsigned j = 0; j < parte.size(); j++) {
-            if (is_upper(caracter = parte[j]))
-                variables.insert(caracter);
-            else
+            if (!is_upper(caracter = parte[j]))
                 terminales.insert(caracter);
         }
     }

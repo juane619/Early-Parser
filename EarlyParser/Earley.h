@@ -16,6 +16,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 #include "Gramatica.h"
 #include "Registro.h"
 
@@ -30,6 +31,7 @@ private:
     Gramatica grammar;
     string cadena;
     vector<vector<Registro> > registros;
+    map<char,bool> check_var;
     
     unsigned j=0;
     unsigned h=0;
@@ -39,6 +41,8 @@ private:
     void clausure();
     void advance();
     void termination();
+    
+    void comprobar();
 };
 
 #endif /* EARLEY_H */
