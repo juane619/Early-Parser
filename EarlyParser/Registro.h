@@ -45,7 +45,9 @@ public:
         return beta;
     }
 
-    char splitVar();
+    char splitVar() ;
+    
+    char splitTer();
     
     void imprimir();
 private:

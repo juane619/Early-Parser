@@ -39,6 +39,17 @@ char Registro::splitVar() {
     return 'e';
 }
 
+char Registro::splitTer() {
+    char car;
+    unsigned pos;
+    for (auto it = grammar->getTerminales()->begin(); it != grammar->getTerminales()->end(); ++it) {
+        if (beta[0] == *it)
+            return *it;
+    }
+    
+    return 'e';
+}
+
 void Registro::imprimir() {
     cout << "(" << i << ", " << j << ", " << A << ", " << alfa << ", " << beta << ")" << endl;
 }

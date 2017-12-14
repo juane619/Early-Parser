@@ -19,14 +19,46 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-    Produccion p1("S>AB");
-    Produccion p2("S>BC");
-    Produccion p3("A>BA");
-    Produccion p4("A>a");
-    Produccion p5("B>CC");
-    Produccion p6("B>b");
-    Produccion p7("C>AB");
-    Produccion p8("C>a");
+    //GRAMATICA 1 DE PRUEBA
+    
+//    Produccion p1("S>AB");
+//    Produccion p2("S>BC");
+//    Produccion p3("A>BA");
+//    Produccion p4("A>a");
+//    Produccion p5("B>CC");
+//    Produccion p6("B>b");
+//    Produccion p7("C>AB");
+//    Produccion p8("C>a");
+//
+//    vector<Produccion> prods;
+//
+//    prods.push_back(p1);
+//    prods.push_back(p2);
+//    prods.push_back(p3);
+//    prods.push_back(p4);
+//    prods.push_back(p5);
+//    prods.push_back(p6);
+//    prods.push_back(p7);
+//    prods.push_back(p8);
+//
+//    Gramatica gram(prods);
+////
+////    for (unsigned i = 0; i < gram.getProducciones().size(); i++)
+////        gram.getProducciones()[i].imprimir();
+//
+//    
+//    
+//    Earley earley1(gram, "baa");
+
+    //GRAMATICA 2 DE PRUEBA
+    
+    Produccion p1("S>T");
+    Produccion p2("S>S+T");
+    Produccion p3("T>F");
+    Produccion p4("T>T*F");
+    Produccion p5("F>a");
+    Produccion p6("F>b");
+    Produccion p7("F>(S)");
 
     vector<Produccion> prods;
 
@@ -37,7 +69,6 @@ int main(int argc, char** argv) {
     prods.push_back(p5);
     prods.push_back(p6);
     prods.push_back(p7);
-    prods.push_back(p8);
 
 
     Gramatica gram(prods);
@@ -46,8 +77,7 @@ int main(int argc, char** argv) {
 //        gram.getProducciones()[i].imprimir();
 
     
-    Earley earley1(gram, "baa");
-
+    Earley earley1(gram, "(a+b)*a");
     earley1.parse();
 
     return 0;
