@@ -28,3 +28,8 @@ string Produccion::parteDer() const {
 void Produccion::imprimir() const {
     cout << _produccion << endl;
 }
+
+bool Produccion::operator==(const Produccion& other) const {
+    return _produccion== other._produccion;
+}
+

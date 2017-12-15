@@ -22,6 +22,8 @@ public:
     string parteDer() const;
     
     void imprimir() const;
+    
+    bool operator==(const Produccion& other) const;
 private:
     string _produccion;  //de la forma S>alfa
 };

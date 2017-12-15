@@ -21,6 +21,14 @@ Earley::Earley(const Gramatica& g, const string& cad) {
 
 bool Earley::parse() {
     unsigned i = 0;
+    
+//     for (int i = 0; i < grammar.getProducciones().size(); i++) {
+//            grammar.getProducciones()[i].imprimir();
+//
+//        }
+//        
+//        cout << cadena;
+    
     initialization();
 
     do {
