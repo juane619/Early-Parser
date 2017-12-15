@@ -119,23 +119,91 @@ int main(int argc, char** argv) {
 //    Earley earley1(gram, "aaaab");
     
     
-    Produccion p2("S>S+M");
-    Produccion p3("S>M");
+    Produccion p1("S>S+M");
+    Produccion p2("S>M");
+    Produccion p3("S>P");
     Produccion p4("M>M*T");
-    Produccion p5("M>T");
-    Produccion p6("T>2");
+    Produccion p5("P>Q");
+    Produccion p6("Q>M/P");
+    Produccion p7("M>T");
+    Produccion p8("T>2");
+    Produccion p9("Q>3");
 
     vector<Produccion> prods;
 
+    prods.push_back(p1);
     prods.push_back(p2);
     prods.push_back(p3);
     prods.push_back(p4);
     prods.push_back(p5);
     prods.push_back(p6);
+    prods.push_back(p7);
+    prods.push_back(p8);
+    prods.push_back(p9);
 
     Gramatica gram(prods);
         
-    Earley earley1(gram, "2+2+2");
+    Earley earley1(gram, "2/3+2");
+    
+//    Produccion p1("S>A");
+//    Produccion p3("S>B");
+//    Produccion p4("A>LaL");
+//    Produccion p5("A>LaA");
+//    Produccion p6("B>LbL");
+//    Produccion p7("B>LbB");
+//    Produccion p8("L>aLbL");
+//    Produccion p9("L>bLaL");
+//    Produccion p10("L>c");
+//
+//    vector<Produccion> prods;
+//
+//    prods.push_back(p1);
+//    prods.push_back(p3);
+//    prods.push_back(p4);
+//    prods.push_back(p5);
+//    prods.push_back(p6);
+//    prods.push_back(p7);
+//    prods.push_back(p8);
+//    prods.push_back(p9);
+//    prods.push_back(p10);
+//
+//    Gramatica gram(prods);
+//        
+//    Earley earley1(gram, "acbcaacbc");
+    
+//    Produccion p1("S>bDD");
+//    Produccion p3("S>Ca");
+//    Produccion p4("S>bc");
+//    Produccion p5("A>B");
+//    Produccion p6("A>aCC");
+//    Produccion p7("A>baD");
+//    Produccion p8("B>cBD");
+//    Produccion p9("B>h");
+//    Produccion p10("B>AC");
+//    Produccion p11("C>bD");
+//    Produccion p12("C>aBA");
+//    Produccion p13("D>CD");
+//    Produccion p14("D>a");
+//
+//    vector<Produccion> prods;
+//
+//    prods.push_back(p1);
+//    prods.push_back(p3);
+//    prods.push_back(p4);
+//    prods.push_back(p5);
+//    prods.push_back(p6);
+//    prods.push_back(p7);
+//    prods.push_back(p8);
+//    prods.push_back(p9);
+//    prods.push_back(p10);
+//    prods.push_back(p11);
+//    prods.push_back(p12);
+//    prods.push_back(p13);
+//    prods.push_back(p14);
+//
+//    Gramatica gram(prods);
+//        
+//    Earley earley1(gram, "baa");
     
     cout << earley1.parse() << endl;
 

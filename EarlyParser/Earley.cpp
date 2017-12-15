@@ -140,100 +140,99 @@ void Earley::advance() {
 }
 
 void Earley::termination() {
-    //    unsigned h, i, b;
-    //    b=0;
-    //    bool added = true;
-    //    while (b<15) {
-    //        added = false;
-    //        h = i = 0;
-    //
-    //        for (; h <= i; h++) {
-    //            for (; i < j; i++) {
-    //                for (unsigned k = 0; k < registros[i].size(); k++) { //registros i
-    //                    if (registros[i][k].getI() == h && registros[i][k].getJ() == i) {
-    //                        // registros[i][k].imprimir();
-    //
-    //                        unsigned tope = registros[j].size();
-    //                        for (unsigned l = 0; l < tope; l++) { //registros j
-    //                            if (registros[j][l].getI() == i) {
-    //                                //registros[j][l].imprimir(); cout << endl;
-    //                                char char_split_var;
-    //                                string aux_split_var;
-    //
-    //                                char_split_var = registros[i][k].splitVar();
-    //                                aux_split_var = char_split_var;
-    //
-    //                                if (aux_split_var == registros[j][l].getA() && registros[j][l].getBeta().empty()) {
-    //                                    string beta_aux = registros[i][k].getBeta();
-    //                                    beta_aux.erase(beta_aux.begin());
-    //                                    Registro reg(h, j, registros[i][k].getA(), registros[i][k].getAlfa() + registros[j][l].getA(), beta_aux, &grammar);
-    //
-    //                                    //reg.imprimir();
-    //                                    bool included = false;
-    //
-    //                                    for (unsigned m = 0; m < registros[j].size() && !registros[j].empty() && !included; m++)
-    //                                        if (registros[j][m] == reg)
-    //                                            included = true;
-    //                                    if (!included) {
-    //                                        added = true;
-    //                                        registros[j].push_back(reg);
-    //                                    }
-    //                                }
-    //                            }
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
-    //        b++;
-    //    }
+//    unsigned h, i, b;
+//    b = 0;
+//    bool added = true;
+//    while (added) {
+//        added = false;
+//        h = i = 0;
+//        for (; i < j; i++) {
+//            for (; h <= i; h++) {
+//                for (unsigned k = 0; k < registros[i].size(); k++) { //registros i
+//                    if (registros[i][k].getI() == h && registros[i][k].getJ() == i) {
+//                        // registros[i][k].imprimir();
+//
+//                        unsigned tope = registros[j].size();
+//                        for (unsigned l = 0; l < tope; l++) { //registros j
+//                            if (registros[j][l].getI() == i) {
+//                                //registros[j][l].imprimir(); cout << endl;
+//                                char char_split_var;
+//                                string aux_split_var;
+//
+//                                char_split_var = registros[i][k].splitVar();
+//                                aux_split_var = char_split_var;
+//
+//                                if (aux_split_var == registros[j][l].getA() && registros[j][l].getBeta().empty()) {
+//                                    string beta_aux = registros[i][k].getBeta();
+//                                    beta_aux.erase(beta_aux.begin());
+//                                    Registro reg(h, j, registros[i][k].getA(), registros[i][k].getAlfa() + registros[j][l].getA(), beta_aux, &grammar);
+//
+//                                    //reg.imprimir();
+//                                    bool included = false;
+//
+//                                    for (unsigned m = 0; m < registros[j].size() && !registros[j].empty() && !included; m++)
+//                                        if (registros[j][m] == reg)
+//                                            included = true;
+//                                    if (!included) {
+//                                        added = true;
+//                                        registros[j].push_back(reg);
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        b++;
+//    }
 
-    unsigned cont, h, i;
-    cont = h = i = 0;
-    while (cont <= j + 1) {
-        for (unsigned k = 0; k < registros[i].size(); k++) { //registros i
-            if (registros[i][k].getI() == h && registros[i][k].getJ() == i) {
-                // registros[i][k].imprimir();
-
-                unsigned tope = registros[j].size();
-                for (unsigned l = 0; l < tope; l++) { //registros j
-                    if (registros[j][l].getI() == i) {
-                        //registros[j][l].imprimir(); cout << endl;
-                        char char_split_var;
-                        string aux_split_var;
-
-                        char_split_var = registros[i][k].splitVar();
-                        aux_split_var = char_split_var;
-
-                        if (aux_split_var == registros[j][l].getA() && registros[j][l].getBeta().empty()) {
-                            string beta_aux = registros[i][k].getBeta();
-                            beta_aux.erase(beta_aux.begin());
-                            Registro reg(h, j, registros[i][k].getA(), registros[i][k].getAlfa() + registros[j][l].getA(), beta_aux, &grammar);
-
-                            //reg.imprimir();
-                            bool included = false;
-
-                            for (unsigned m = 0; m < registros[j].size() && !registros[j].empty() && !included; m++)
-                                if (registros[j][m] == reg)
-                                    included = true;
-                            if (!included) {
-                                registros[j].push_back(reg);
+        unsigned cont, h, i;
+        cont = h = i = 0;
+        while (cont <= j + 1) {
+            for (unsigned k = 0; k < registros[i].size(); k++) { //registros i
+                if (registros[i][k].getI() == h && registros[i][k].getJ() == i) {
+                    // registros[i][k].imprimir();
+    
+                    unsigned tope = registros[j].size();
+                    for (unsigned l = 0; l < tope; l++) { //registros j
+                        if (registros[j][l].getI() == i) {
+                            //registros[j][l].imprimir(); cout << endl;
+                            char char_split_var;
+                            string aux_split_var;
+    
+                            char_split_var = registros[i][k].splitVar();
+                            aux_split_var = char_split_var;
+    
+                            if (aux_split_var == registros[j][l].getA() && registros[j][l].getBeta().empty()) {
+                                string beta_aux = registros[i][k].getBeta();
+                                beta_aux.erase(beta_aux.begin());
+                                Registro reg(h, j, registros[i][k].getA(), registros[i][k].getAlfa() + registros[j][l].getA(), beta_aux, &grammar);
+    
+                                //reg.imprimir();
+                                bool included = false;
+    
+                                for (unsigned m = 0; m < registros[j].size() && !registros[j].empty() && !included; m++)
+                                    if (registros[j][m] == reg)
+                                        included = true;
+                                if (!included) {
+                                    registros[j].push_back(reg);
+                                }
                             }
                         }
                     }
                 }
             }
+            if (h < i)
+                h++;
+            else if (i + 1 == j) {
+                i = h = 0;
+                cont++;
+            } else if (h == i) {
+                h = 0;
+                i++;
+            }
         }
-        if (h < i)
-            h++;
-        else if (i + 1 == j) {
-            i = h = 0;
-            cont++;
-        } else if (h == i) {
-            h = 0;
-            i++;
-        }
-    }
 }
 
 void Earley::comprobar() {
