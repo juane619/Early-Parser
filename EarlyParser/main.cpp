@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   main.cpp
@@ -43,8 +38,11 @@ int main(int argc, char** argv) {
 //
 //    Gramatica gram(prods);
 //
-//    Earley earley1(gram, "baaaba");
+//    Earley earley1(gram, "baa");
 
+    
+    
+    
     //GRAMATICA 2 DE PRUEBA
     
 //    Produccion p1("S>T");
@@ -102,6 +100,9 @@ int main(int argc, char** argv) {
 //        
 //    Earley earley1(gram, "azbzbzbz");
     
+    
+    
+    
 //        Produccion p1("S>AA");
 //    Produccion p2("A>AAA");
 //    Produccion p3("A>a");
@@ -119,31 +120,36 @@ int main(int argc, char** argv) {
 //    Earley earley1(gram, "aaaab");
     
     
-    Produccion p1("S>S+M");
-    Produccion p2("S>M");
-    Produccion p3("S>P");
-    Produccion p4("M>M*T");
-    Produccion p5("P>Q");
-    Produccion p6("Q>M/P");
-    Produccion p7("M>T");
-    Produccion p8("T>2");
-    Produccion p9("Q>3");
-
-    vector<Produccion> prods;
-
-    prods.push_back(p1);
-    prods.push_back(p2);
-    prods.push_back(p3);
-    prods.push_back(p4);
-    prods.push_back(p5);
-    prods.push_back(p6);
-    prods.push_back(p7);
-    prods.push_back(p8);
-    prods.push_back(p9);
-
-    Gramatica gram(prods);
-        
-    Earley earley1(gram, "2/3+2");
+    
+    
+//    Produccion p1("S>S+M");
+//    Produccion p2("S>M");
+//    Produccion p3("S>P");
+//    Produccion p4("M>M*T");
+//    Produccion p5("P>Q");
+//    Produccion p6("Q>M/P");
+//    Produccion p7("M>T");
+//    Produccion p8("T>2");
+//    Produccion p9("Q>3");
+//
+//    vector<Produccion> prods;
+//
+//    prods.push_back(p1);
+//    prods.push_back(p2);
+//    prods.push_back(p3);
+//    prods.push_back(p4);
+//    prods.push_back(p5);
+//    prods.push_back(p6);
+//    prods.push_back(p7);
+//    prods.push_back(p8);
+//    prods.push_back(p9);
+//
+//    Gramatica gram(prods);
+//        
+//    Earley earley1(gram, "2/3+2");
+    
+    
+    
     
 //    Produccion p1("S>A");
 //    Produccion p3("S>B");
@@ -205,7 +211,38 @@ int main(int argc, char** argv) {
 //        
 //    Earley earley1(gram, "baa");
     
-    cout << earley1.parse() << endl;
+    Produccion p1("S>AaB");
+    Produccion p3("S>AaC");
+    Produccion p5("A>Ab");
+    Produccion p6("A>Ac");
+    Produccion p7("A>b");
+    Produccion p8("A>c");
+    Produccion p9("B>BdC");
+    Produccion p10("B>0");
+    Produccion p11("C>CeB");
+    Produccion p12("C>1");
+
+    vector<Produccion> prods;
+
+    prods.push_back(p1);
+    prods.push_back(p3);
+    prods.push_back(p5);
+    prods.push_back(p6);
+    prods.push_back(p7);
+    prods.push_back(p8);
+    prods.push_back(p9);
+    prods.push_back(p10);
+    prods.push_back(p11);
+    prods.push_back(p12);
+
+    Gramatica gram(prods);
+        
+    Earley earley1(gram, "cba1d1");
+    
+    if(earley1.parse())
+        cout << "La palabra si pertenece al lenguaje\n";
+    else
+        cout << "La palabra no pertenece al lenguaje\n";
 
     return 0;
 }
