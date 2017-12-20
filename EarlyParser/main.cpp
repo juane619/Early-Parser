@@ -15,7 +15,7 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-    if (argc == 2 || argc > 3) {
+    /*if (argc == 2 || argc > 3) {
         cout << "Uso del programa: ./earley \"file_prods\" \"string_to_check\"" << endl;
         return 0;
     } else if (argc == 3) {
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
             cout << "La palabra no pertenece al lenguaje\n";
         
         return 0;
-    } else if(argc==1){
+    } else if(argc==1){*/
         //GRAMATICA 1 DE PRUEBA
 
         //    Produccion p1("S>AB");
@@ -253,7 +253,7 @@ int main(int argc, char** argv) {
 
         Gramatica gram(prods);
 
-        Earley earley1(gram, "cba1d1");
+        Earley earley1(gram, "bba0d1");
         
         if (earley1.parse())
             cout << "La palabra si pertenece al lenguaje\n";
@@ -261,6 +261,6 @@ int main(int argc, char** argv) {
             cout << "La palabra no pertenece al lenguaje\n";
         
         return 0;
-    }
+    //}
 }
 
