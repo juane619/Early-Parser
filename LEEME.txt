@@ -1,20 +1,19 @@
-Algoritmo de Earley implementado por JuanE GarcÌa y Adri·n PeÒa.
+Algoritmo de Earley implementado por JuanE Garc√≠a y Adri√°n Pe√±a.
 
-Implementado en C++ utilizando POO aplicando la tÈcnica de programaciÛn din·mica.
+Implementado en C++ utilizando POO aplicando la t√©cnica de programaci√≥n din√°mica.
 
 Eficiencia: O(3).
 
-Uso: ./earley "file_name" "string_to_check" Û creando las producciones a mano en el archivo 
-main.
+Uso: ./earley "file_name" "string_to_check" √≥ creando las producciones a mano en el main, 
 
-donde "file_name" es el archivo con las producciones de la gram·tica y
+donde "file_name" es el archivo con las producciones de la gram√°tica y
 "string_to_check" es la palabra a comprobar si pertenece al lenguaje.
 
 El formato de archivo de las producciones es: 
-	cada una de las producciones en una linea de la forma "parte_izquierda">"parte_derecha"
-	siempre siendo el sÌmbolo S el inicial.
+	cada una de las producciones en una linea de la forma: parte_izquierda">"parte_derecha"
+	siempre siendo el s√≠mbolo 'S' el s√≠mbolo inicial.
 
 
 !!!!
- Comprobar que el fichero donde se especifica la gram·tica no contenga retorno de carro, esto es que los finales de linea deben de ser LF
+ Comprobar que las lineas del fichero con las producciones acaben solo con LF.
 !!!!
