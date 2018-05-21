@@ -3,7 +3,7 @@ Algoritmo de Earley implementado por JuanE García y Adrián Peña.
 
 Implementado en C++ utilizando POO aplicando la técnica de programación dinámica.
 
-Eficiencia: O(3).
+Eficiencia: O(n^3).
 
 Uso: ./earley "file_name" "string_to_check" ó creando las producciones a mano en el main, 
 
@@ -16,5 +16,5 @@ El formato de archivo de las producciones es:
 
 
 !!!!
- Comprobar que las lineas del fichero con las producciones acaben solo con LF.
+ Comprobar que las lineas del fichero con las producciones acaben solo con LF (según use Windows-Linux).
 !!!!
